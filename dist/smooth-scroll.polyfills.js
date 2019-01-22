@@ -351,16 +351,15 @@ if (window.Element && !Element.prototype.closest) {
 
 		// Get the hash to use
 		var hash = window.location.hash;
-		hash = hash ? hash : window.pageYOffset;
 
 		// Set a default history
 		history.replaceState(
 			{
 				smoothScroll: JSON.stringify(options),
-				anchor: hash ? hash : window.pageYOffset
+				anchor: hash
 			},
 			document.title,
-			hash ? hash : window.location.href
+			hash
 		);
 
 	};
